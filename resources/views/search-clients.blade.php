@@ -5,10 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Enrollments') }}</div>
-
+                <div class="card-header">{{ __('Searched Client') }} <a href="{{ url('/home') }}"
+                        class="btn btn-warning float-right">BACK</a>
+                </div>
                 <div class="card-body">
                     <div class="container">
+                        @if($enrollments !== '')
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
@@ -16,7 +18,6 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Contact</th>
                                     <th scope="col">Program</th>
-                                    <th scope="col">Date Enrolled</th>
                                     <th scope="col">status</th>
                                 </tr>
                             </thead>
@@ -27,7 +28,6 @@
                                     <td>{{$enrollment->client->firstname}} {{$enrollment->client->lastname}}</td>
                                     <td>{{$enrollment->client->contact}}</td>
                                     <td>{{$enrollment->program->name}}</td>
-                                    <td>{{$enrollment->created_at}}</td>
                                     @if($enrollment->status == 1)
                                     <td>Active</td>
                                     @else
@@ -37,6 +37,8 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        @else
+                        <div> No data</div> @endif
                     </div>
                 </div>
             </div>

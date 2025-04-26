@@ -31,6 +31,10 @@ Route::post('save-program',[ProgramController::class,'store_program'])->name('sa
 //Client Routes
 Route::get('/create-client', [ClientController::class, 'create_client'])->name('create-client');
 Route::post('/save-client', [ClientController::class, 'store_client'])->name('save-client');
+Route::get('/filter-clients', [ClientController::class, 'filter_clients'])->name('filter-clients');
+Route::post('/search', [ClientController::class, 'search'])->name('search');
+Route::get('/view-profile/{id}', [ClientController::class, 'view_profile'])->name('view-profile');
+
 
 //Enrolment Routes
 Route::get('/create-enrollment', [EnrolmentController::class, 'create_enrollment'])->name('create-enrollment');

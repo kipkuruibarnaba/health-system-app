@@ -52,6 +52,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('view-enrollment')}}">View Enrolments </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('filter-clients')}}">Search </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

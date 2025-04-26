@@ -26,7 +26,7 @@
                                                 <tr>
                                                     <th scope="col">#</th>
                                                     <th scope="col">Name</th>
-                                                    <th scope="col">Operation</th>
+                                                    <!-- <th scope="col">Operation</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -34,7 +34,7 @@
                                                 <tr>
                                                     <th scope="row">{{$program->id}}</th>
                                                     <td>{{$program->name}}</td>
-                                                    <td><button type="submit" class="btn btn-primary">View</button></td>
+                                                    <!-- <td><button type="submit" class="btn btn-primary">View</button></td> -->
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -62,7 +62,10 @@
                                                 <tr>
                                                     <th scope="row">{{$client->id}}</th>
                                                     <td>{{$client->firstname}} {{$client->lastname}}</td>
-                                                    <td><button type="submit" class="btn btn-primary">View</button></td>
+                                                    <td>
+                                                        <a href="{{route('view-profile',$client ->id)}}"
+                                                            class="btn btn-success">View Profile</a>
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
