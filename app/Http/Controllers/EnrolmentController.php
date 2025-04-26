@@ -25,4 +25,15 @@ class EnrolmentController extends Controller
         $Enrolment->Save();
         return redirect()->back()->with('success','Enrolment Added Successfully');
     }
+    public function view_enrollment()
+    {
+        $enrollments =Enrolment::all();
+        foreach($enrollments as $enrollment){
+        $enrollment->client = Client::where('id',$enrollment->client_id)->first();
+        // dd( $enrollment->client);
+        $enrollment->program = Program::where('id',$enrollment->program_id)->first();
+        // dd($enrollment->program);
+       }
+        return view('view-enrollment',compact('enrollments'));
+    }
 }

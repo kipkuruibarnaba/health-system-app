@@ -35,3 +35,4 @@ Route::post('/save-client', [ClientController::class, 'store_client'])->name('sa
 //Enrolment Routes
 Route::get('/create-enrollment', [EnrolmentController::class, 'create_enrollment'])->name('create-enrollment');
 Route::post('/save-enrollment', [EnrolmentController::class, 'store_enrollment'])->name('save-enrollment');
+Route::get('/view-enrollment', [EnrolmentController::class, 'view_enrollment'])->name('view-enrollment');
